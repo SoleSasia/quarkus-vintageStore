@@ -1,0 +1,12 @@
+version: "3"
+services:
+  rest-number:
+    image: "ssasia/rest-number:latest"
+    ports:
+      - "8701:8701"
+  rest-book:
+    image: "ssasia/rest-book:latest"
+    ports:
+      - "8702:8702"
+    environment:
+      - NUMBER_PROXY_MP_REST_URL=http://rest-number:8701
